@@ -19,6 +19,8 @@
 }
 */
 
+
+/*
 .example {
     display: flex;
     transition: all .5s;
@@ -51,13 +53,6 @@ body {
     line-height: 1.5;
 }
 
-
-/*#banner {
-    background: url("http://10.175.165.11/SP166.62.6.79/SDwww.iamad.com.au/SpEDM%2fzLandP%2fbanner.jpg/Rqae5eb53b-c103-49e4-a363-9cb05f81161d/IDBB110B7788D9DEE/RV200000/AVSkyController_3.2.5.54985/Br200/CL2-ea/DL0/DT0/EI155777439/Ht240/IP10.103.132.98%3a49522/IQ25/MO15/MT0/NIGPMOCCA-SAVDIST1-SKFCTL3/OC0/OS0/Otjpeg/PB200/PNMedCongestion_3G_Desktop/SI0700060072c150000000000000000000000000000a678462000000000000000000000000a63e064fadf5d688b32c0901/SUhttp%3a%2f%2fwww.iamad.com.au%2fEDM%2fzLandP%2fbanner.jpg/Sd736B7966697265/TI155777439/Tr1/Wh400/EV40c3c75cc6d21e10debcd44e00cb028d/file.jpeg") no-repeat;
-    background-size: cover;
-    height: 562px;
-    text-align: center;
-}*/
 
 #main {
     background: #dee6e6;
@@ -227,7 +222,9 @@ address .pm {
         background: url("http://10.175.165.11/SP166.62.6.79/SDwww.iamad.com.au/SpEDM%2fzLandP%2fbanner-mob.jpg/Rqae5eb53b-c103-49e4-a363-9cb05f81161d/IDBB110B7788D9DEE/RV200000/AVSkyController_3.2.5.54985/Br200/CL2-ea/DL0/DT0/EI155947278/Ht240/IP10.103.132.98%3a49540/IQ25/MO15/MT0/NIGPMOCCA-SAVDIST1-SKFCTL3/OC0/OS0/Otjpeg/PB200/PNMedCongestion_3G_Desktop/SI0700060084c150000000000000000000000000000a678462000000000000000000000000a63e064f0b3ae66a2e2d0901/SUhttp%3a%2f%2fwww.iamad.com.au%2fEDM%2fzLandP%2fbanner-mob.jpg/Sd736B7966697265/TI155947278/Tr1/Wh400/EVd85bb4be222c85c1786ce57cb0ff40a7/file.jpeg") no-repeat;
         height: 317px;
     }*/
-    #ft-text h3 {
+
+
+/*  #ft-text h3 {
         text-align: left;
         font-size: 21px;
     }
@@ -267,11 +264,11 @@ address .pm {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    /* #banner {
+     #banner {
         background: url("http://10.175.165.11/SP166.62.6.79/SDwww.iamad.com.au/SpEDM%2fzLandP%2fbanner-sm.jpg/Rqae5eb53b-c103-49e4-a363-9cb05f81161d/IDBB110B7788D9DEE/RV200000/AVSkyController_3.2.5.54985/Br200/CL2-ea/DL0/DT0/EI155958919/Ht240/IP10.103.132.98%3a49546/IQ25/MO15/MT0/NIGPMOCCA-SAVDIST1-SKFCTL3/OC0/OS0/Otjpeg/PB200/PNMedCongestion_3G_Desktop/SI070006008ac150000000000000000000000000000a678462000000000000000000000000a63e064f09e2b543372d0901/SUhttp%3a%2f%2fwww.iamad.com.au%2fEDM%2fzLandP%2fbanner-sm.jpg/Sd736B7966697265/TI155958919/Tr1/Wh400/EV2d487abfd777e09816f09647123fa9b9/file.jpeg") no-repeat;
         height: 285px;
         background-size: cover;
-    }*/
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
@@ -292,3 +289,4 @@ address .pm {
         height: 747px;
     }
 }
+*/

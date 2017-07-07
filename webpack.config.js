@@ -6,6 +6,8 @@ var extractTextWebpack = require('extract-text-webpack-plugin');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const PurifyCSSPlugin = require('purifycss-webpack');
 var bourbon = require('node-bourbon').includePaths;
+const extractCSS = new extractTextWebpack('css/[name].[hash]-bootstrap.css');
+const extractSCSS = new extractTextWebpack('css/[name][hash]-styles.css');
 
 var vendor_lib = ['jquery'];
 module.exports = {
@@ -20,13 +22,14 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: 'js/[name].[chunkhash].js', // generate file name with hash value [name will replace by entryes key value {bundle and vendor}]
-        // publicPath: '/dist/'
+        //
+        publicPath: '/dist'
     },
     module: {
         rules: [{
                 test: /\.js$/,
-                exclude: [/(node_modules|bower_components)/, './src/css/styles.css'],
-                use: {
+                exclude: /(node_modules|bower_components)/,
+                use: [{
                     loader: 'babel-loader',
                     options: {
                         presets: [
@@ -34,26 +37,29 @@ module.exports = {
                         ]
 
                     }
-                }
-            }, {
-                test: /\.scss$/, // sass-loader >>> handle scss file [ file loader >>> will simply copy the files without changing original name { will  add hash value too}]
-                use: [{ loader: 'file-loader', options: { name: "[name].css", outputPath: '/css/' } }, {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: function() {
-                            return [
-                                require('autoprefixer')
-                            ]
-                        }
-                    }
-                }, {
-                    loader: 'sass-loader',
-                    options: {
-                        includePaths: [bourbon]
-                    }
                 }]
             },
-
+            // *********************convert sass [file-loader,sass-loader] **********************
+            // {
+            //     test: /\.scss$/, // sass-loader >>> handle scss file [ file loader >>> will simply copy the files without changing original name { will  add hash value too}]
+            //     exclude: ['./src/style.scss'],
+            //     use: [{ loader: 'file-loader', options: { name: "[name].css", outputPath: '/css/' } }, {
+            //         loader: 'postcss-loader',
+            //         options: {
+            //             plugins: function() {
+            //                 return [
+            //                     require('autoprefixer')
+            //                 ]
+            //             }
+            //         }
+            //     }, {
+            //         loader: 'sass-loader',
+            //         options: {
+            //             includePaths: [bourbon]
+            //         }
+            //     }]
+            // },
+            // *************************************************************
             {
                 test: /\.html$/,
                 use: ['html-loader']
@@ -61,7 +67,7 @@ module.exports = {
 
             {
                 test: /\.css$/, // handle css 
-                use: extractTextWebpack.extract({
+                use: extractCSS.extract({
                     loader: [{ loader: 'css-loader', options: { importLoaders: 1 } }, {
                         loader: 'postcss-loader',
                         options: {
@@ -76,12 +82,27 @@ module.exports = {
             },
 
             {
+                test: /\.scss$/, // handle css 
+                use: extractSCSS.extract({
+                    loader: ['css-loader', {
+                        loader: 'sass-loader',
+                        options: {
+                            includePaths: [bourbon]
+                        }
+                    }]
+                })
+            },
+
+
+
+            {
                 test: /\.(jpe?g|png|svg)$/,
                 use: [{
                         loader: 'url-loader', // save as file or convert to data url based on limit condition
                         options: {
                             limit: 40000, // convert to base 64 url if less than 40KB,
                             outputPath: '/images/'
+
 
                         }
                     }, 'image-webpack-loader'] // compress image
@@ -108,7 +129,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new extractTextWebpack('css/main.css'), // save css files under css dir with original name[will add hash value too] { name is comming from entry properties[for .css files only]}
+        extractCSS,
+        extractSCSS,
+        // new extractTextWebpack('css/main.css'), // save css files under css dir with original name[will add hash value too] { name is comming from entry properties[for .css files only]}
         new htmlWebPack({
             template: './src/index.html'
         }),
@@ -123,7 +146,11 @@ module.exports = {
         new PurifyCSSPlugin({ // remove unused css from bootstrap and other stylesheets
             // Give paths to parse for rules. These should be absolute!
             paths: glob.sync(path.join(__dirname, 'src/*.html')),
+            purifyOptions: {
+                minify: true
+            }
         })
+
         // new BundleAnalyzerPlugin()
 
 
