@@ -1,5 +1,5 @@
 @import "./sass_mixins";
-// @import "bourbon";
+@import "bourbon";
 // font sizes
 $breakpoints: ( small: 480px, medium: 768px, large: 1024px, vlarge:1200px);
 $h1-font-sizes: ( null: (23px, ), small: (36px, 1.3), medium: (38px, 1.4), large: (52px, 1.5));
@@ -47,7 +47,7 @@ body {
     font-size: 100%;
     line-height: 1.5;
     color: $bdColor;
-    background: green;
+    @include linear-gradient(to top, red, orange);
 }
 
 .example {

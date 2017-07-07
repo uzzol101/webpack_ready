@@ -1,13 +1,74 @@
-webpackJsonp([0], [function(t, n, e) { "use strict";
-    Object.defineProperty(n, "__esModule", { value: !0 });
-    var o = e(1),
-        s = (e.n(o), e(2)),
-        u = (e.n(s), e(3)),
-        c = (e.n(u), e(4)),
-        p = (e.n(c), e(5)),
-        i = (e.n(p), e(6));
-    document.getElementById("output").innerHTML = "Output: " + i.a() }, function(t, n, e) { t.exports = e.p + "/css/style.css" }, function(t, n, e) { t.exports = e.p + "/css/style - Copy.css" }, function(t, n) {}, function(t, n) {}, function(t, n) { t.exports = 'module.exports = __webpack_public_path__ + "user.html";' }, function(t, n, e) { "use strict";
+webpackJsonp([0],[
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-    function o() {
-        return "foo" }
-    n.a = o }], [0]);
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_Copy_scss__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_Copy_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style_Copy_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_styles_css__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_styles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__css_styles_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__css_bootstrap_css__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__css_bootstrap_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__css_bootstrap_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user_html__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__user_html__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__helper__ = __webpack_require__(6);
+
+
+
+
+
+
+
+
+var elem = document.getElementById('output');
+elem.innerHTML = 'Output: ' + __WEBPACK_IMPORTED_MODULE_5__helper__["a" /* foo */]();
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/css/style.css";
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "/css/style - Copy.css";
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = "module.exports = __webpack_public_path__ + \"user.html\";";
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = foo;
+/* unused harmony export bar */
+function foo() {
+    return 'foo';
+}
+function bar() {
+    return 'bar';
+}
+
+/***/ })
+],[0]);

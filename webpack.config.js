@@ -5,6 +5,7 @@ var htmlWebPack = require('html-webpack-plugin');
 var extractTextWebpack = require('extract-text-webpack-plugin');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const PurifyCSSPlugin = require('purifycss-webpack');
+var bourbon = require('node-bourbon').includePaths;
 
 var vendor_lib = ['jquery'];
 module.exports = {
@@ -45,7 +46,12 @@ module.exports = {
                             ]
                         }
                     }
-                }, 'sass-loader']
+                }, {
+                    loader: 'sass-loader',
+                    options: {
+                        includePaths: [bourbon]
+                    }
+                }]
             },
 
             {
