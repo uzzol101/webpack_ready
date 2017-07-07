@@ -1,0 +1,51 @@
+@import "./sass_mixins";
+// @import "bourbon";
+// font sizes
+$breakpoints: ( small: 480px, medium: 768px, large: 1024px, vlarge:1200px);
+$h1-font-sizes: ( null: (23px, ), small: (36px, 1.3), medium: (38px, 1.4), large: (52px, 1.5));
+$p-font-sizes: ( null: (14px, ), small: 16px, medium: (17px, ), 900px: 18px, large: (17px, 1.5), 1440px: 17px, );
+$h3-font-sizes: ( null: (23px, 1.3), small: (36px, 1.3), medium: (33px, 1.2), large: (40px, 1.2), vlarge:(52px, 1.2));
+// modular-scale base setup
+// helper classes
+//     @font-face {
+//     font-family: 'Exo-Regular';
+//     src: url('../fonts/Exo-Regular.otf');
+// }
+// @font-face {
+//     font-family: 'Exo-Medium';
+//     src: url('../fonts/Exo-Medium.otf');
+// }
+// @font-face {
+//     font-family: 'Exo-Light';
+//     src: url('../fonts/Exo-Light.otf');
+// }
+// @font-face {
+//     font-family: 'Myriad-Pro';
+//     src: url('../fonts/Myriad-Pro.ttf');
+// }
+// .clearfix {
+//     @include clearfix;
+// }
+.clear-left {
+    clear: left;
+}
+
+.row-centered {
+    text-align: center;
+}
+
+.col-centered {
+    display: inline-block;
+    float: none !important;
+}
+
+// Colors Variables
+$bdColor: #ededed;
+$buttonColor: #d9272d;
+body {
+    font-family: 'Exo-medium';
+    font-size: 100%;
+    line-height: 1.5;
+    color: $bdColor;
+    background: green;
+}
